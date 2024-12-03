@@ -49,7 +49,7 @@ const LoginScreen = ({navigation}) => {
               console.log('formdata', formData);
               dispatch(postLogin(formData));
             }}>
-            {({handleChange, handleSubmit, values, errors}) => (
+            {({handleChange, handleSubmit, values, errors, touched}) => (
               <View>
                 <TextInput
                   lable="Email"
@@ -57,6 +57,7 @@ const LoginScreen = ({navigation}) => {
                   value={values.email}
                   errors={errors.email}
                   onChangeText={handleChange('email')}
+                  touched={touched.email}
                 />
                 <Gap height={12} />
                 <TextInput
@@ -67,6 +68,7 @@ const LoginScreen = ({navigation}) => {
                   errors={errors.password}
                   secureTextEntry={true}
                   onChangeText={handleChange('password')}
+                  touched={touched.password}
                 />
                 <TouchableOpacity
                   style={styles.notAccount}

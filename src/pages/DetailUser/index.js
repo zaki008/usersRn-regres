@@ -31,7 +31,11 @@ const DetailUser = ({navigation, route}) => {
           <View style={{alignItems: 'center'}}>
             <View style={styles.bgImage}>
               <Image
-                source={{uri: detailUser.data.avatar}}
+                source={{
+                  uri:
+                    detailUser?.data?.avatar ||
+                    'https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?t=st=1733193477~exp=1733197077~hmac=164cf990982a371c74560000aeb04740a5056ab75677e35b3b117d851765f24f&w=740',
+                }}
                 style={styles.image}
               />
             </View>
@@ -39,13 +43,13 @@ const DetailUser = ({navigation, route}) => {
           <View style={styles.wpItemDetail}>
             <ItemDetail
               title={'First Name'}
-              info={detailUser.data.first_name || '-'}
+              info={detailUser?.data?.first_name || '-'}
             />
             <ItemDetail
               title={'Last Name'}
-              info={detailUser.data.last_name || '-'}
+              info={detailUser?.data?.last_name || '-'}
             />
-            <ItemDetail title={'Email'} info={detailUser.data.email || '-'} />
+            <ItemDetail title={'Email'} info={detailUser?.data?.email || '-'} />
           </View>
         </View>
       )}

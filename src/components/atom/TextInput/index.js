@@ -17,6 +17,7 @@ const TextInput = ({
   stylesTextInput,
   stylesLabel,
   errors,
+  touched,
   ...restProps
 }) => {
   return (
@@ -28,7 +29,7 @@ const TextInput = ({
         placeholderTextColor={Colors.gray03}
         {...restProps}
       />
-      {errors && <Text style={styles.txtError}>{errors}</Text>}
+      {errors && touched && <Text style={styles.txtError}>{errors}</Text>}
     </View>
   );
 };

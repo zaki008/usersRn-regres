@@ -49,7 +49,7 @@ const RegisterScreen = ({navigation}) => {
               console.log('formdata', formData);
               dispatch(postRegister(formData));
             }}>
-            {({handleChange, handleSubmit, values, errors}) => (
+            {({handleChange, handleSubmit, values, errors, touched}) => (
               <View>
                 <TextInput
                   lable="Email"
@@ -58,6 +58,7 @@ const RegisterScreen = ({navigation}) => {
                   value={values.email}
                   errors={errors.email}
                   onChangeText={handleChange('email')}
+                  touched={touched.email}
                 />
                 <Gap height={12} />
                 <TextInput
@@ -68,6 +69,7 @@ const RegisterScreen = ({navigation}) => {
                   errors={errors.password}
                   onChangeText={handleChange('password')}
                   secureTextEntry={true}
+                  touched={touched.password}
                 />
                 <Gap height={12} />
                 <TextInput
@@ -78,6 +80,7 @@ const RegisterScreen = ({navigation}) => {
                   errors={errors.confirmPassword}
                   onChangeText={handleChange('confirmPassword')}
                   secureTextEntry={true}
+                  touched={touched.confirmPassword}
                 />
                 <TouchableOpacity
                   style={styles.notAccount}
